@@ -1,0 +1,167 @@
+version: 2
+
+sources:
+  - name: trabajo_final
+    schema: trabajo_final
+    database: alumno25_dev_bronze_db
+
+    
+    tables:
+      - name: consolas
+        description: 'Tabla de las principales consolas del mercado'
+        columns:
+          - name: consola
+            data_type: varchar
+            description: ""
+          - name: abreviatura
+            data_type: varchar
+            description: ""
+          - name: lanzamiento
+            data_type: varchar
+            description: ""
+          - name: empresa
+            data_type: varchar
+            description: ""
+          - name: precio_na
+            data_type: number
+            description: ""
+          - name: ventas_globales
+            data_type: number
+            description: ""
+
+      - name: desarrollador_indie
+        description: 'Desarrolladores de videojuegos indies'
+        columns:
+          - name: desarrollador
+            data_type: varchar
+            description: ""
+          - name: ciudad
+            data_type: varchar
+            description: ""
+          - name: autonomous_area
+            data_type: varchar
+            description: ""
+          - name: pais
+            data_type: varchar
+            description: ""
+          - name: juegos_notables
+            data_type: varchar
+            description: ""
+          - name: notas
+            data_type: varchar
+            description: ""
+
+      - name: desarrolladores
+        description: 'Empresas desarrolladoras de videojuegos'
+        columns:
+          - name: desarrollador
+            data_type: varchar
+            description: ""
+          - name: ciudad
+            data_type: varchar
+            description: ""
+          - name: division_administrativa
+            data_type: varchar
+            description: ""
+          - name: pais
+            data_type: varchar
+            description: ""
+          - name: year_published
+            data_type: varchar
+            description: ""
+          - name: juegos_notables
+            data_type: varchar
+            description: ""
+          - name: notas
+            data_type: varchar
+            description: ""
+
+      - name: inflacion
+        description: 'Inflación mundial por año'
+        columns:
+          - name: anyo
+            data_type: number
+            description: ""
+          - name: infacion_global
+            data_type: number
+            description: ""
+          - name: cambio_euro_dolar
+            data_type: number
+            description: ""
+          - name: cambio_dolar_euro
+            data_type: number
+            description: ""
+
+      - name: paises
+        description: 'Listado de países'
+        columns:
+          - name: pais
+            data_type: varchar
+            description: ""
+          - name: country
+            data_type: varchar
+            description: ""
+          - name: pays
+            data_type: varchar
+            description: ""
+          - name: abreviatura_1
+            data_type: varchar
+            description: ""
+          - name: abreviatura_2
+            data_type: varchar
+            description: ""
+          - name: codigo_telf
+            data_type: varchar
+            description: ""
+          - name: continente
+            data_type: varchar
+            description: ""
+
+      - name: ventas
+        description: 'Ventas de videojuegos'
+        columns:
+          - name: indice
+            data_type: number
+            description: ""
+          - name: rango
+            data_type: number
+            description: ""
+          - name: nombre
+            data_type: varchar
+            description: ""
+          - name: plataforma
+            data_type: varchar
+            description: ""
+          - name: year_published
+            data_type: number
+            description: ""
+          - name: genero
+            data_type: varchar
+            description: ""
+          - name: publisher
+            data_type: varchar
+            description: ""
+          - name: precio_dolares
+            data_type: number
+            description: ""
+          - name: precio_euros
+            data_type: number
+            description: ""
+          - name: ventas_na
+            data_type: number
+            description: ""
+          - name: ventas_eu
+            data_type: number
+            description: ""
+          - name: ventas_jp
+            data_type: number
+            description: ""
+          - name: otras_ventas
+            data_type: number
+            description: ""
+          - name: ventas_globales
+            data_type: number
+            description: ""
+          - name: reviews
+            data_type: number
+            description: ""
