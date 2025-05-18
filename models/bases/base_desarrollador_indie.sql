@@ -10,6 +10,5 @@ select
     lower(pais) as pais,
     'Desconocido' as fundacion,
     juegos_notables,
-    notas,
-    'indie' as caracteristicas
-from des_indie
+    notas
+    from des_indie
