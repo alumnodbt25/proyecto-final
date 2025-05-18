@@ -10,7 +10,6 @@ select
     lower(pais) as pais,
     year_published as fundacion,
     juegos_notables,
-    notas,
-    'empresa' as caracteristicas
-
+    notas
+    
 from desarrollador
