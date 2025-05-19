@@ -5,8 +5,6 @@ with ventas as (
     year_published as lanzamiento,
     lower(genero) as genero,
     lower(publisher) as empresa,
-    precio_dolares,
-    precio_euros,
     ventas_na,
     ventas_eu,
     ventas_jp,
@@ -18,14 +16,12 @@ with ventas as (
 )
 
 select 
-    {{ dbt_utils.generate_surrogate_key(['videojuego','ventas_globales']) }} as ventas_id,
+    {{ dbt_utils.generate_surrogate_key(['videojuego','consola']) }} as ventas_id,
     videojuego,
     consola,
     lanzamiento,
     genero,
     empresa,
-    precio_dolares,
-    precio_euros,
     ventas_na,
     ventas_eu,
     ventas_jp,
