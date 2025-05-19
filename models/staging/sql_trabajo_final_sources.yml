@@ -141,12 +141,6 @@ sources:
           - name: publisher
             data_type: varchar
             description: ""
-          - name: precio_dolares
-            data_type: number
-            description: ""
-          - name: precio_euros
-            data_type: number
-            description: ""
           - name: ventas_na
             data_type: number
             description: ""
@@ -163,5 +157,116 @@ sources:
             data_type: number
             description: ""
           - name: reviews
+            data_type: number
+            description: ""
+      - name: producto
+        description: 'Información de videojuegos'
+        columns:
+          - name: titulo
+            data_type: varchar
+            description: ""
+          - name: features_handheld
+            data_type: boolean
+            description: ""
+          - name: max_players
+            data_type: number
+            description: ""
+          - name: multiplatform
+            data_type: boolean
+            description: ""
+          - name: online
+            data_type: boolean
+            description: ""
+          - name: genre
+            data_type: varchar
+            description: ""
+          - name: licensed
+            data_type: boolean
+            description: ""
+          - name: publishers
+            data_type: varchar
+            description: ""
+          - name: sequel
+            data_type: boolean
+            description: ""
+          - name: review_score
+            data_type: number
+            description: ""
+          - name: sales
+            data_type: number
+            description: ""
+          - name: used_price
+            data_type: number
+            description: ""
+          - name: console
+            data_type: varchar
+            description: ""
+          - name: rating
+            data_type: varchar
+            description: ""
+          - name: re-release
+            data_type: boolean
+            description: ""
+          - name: release_year
+            data_type: number
+            description: ""
+          - name: average
+            data_type: number
+            description: ""
+          - name: leisure
+            data_type: number
+            description: ""
+          - name: play_median
+            data_type: number
+            description: ""
+          - name: polled
+            data_type: integer
+            description: ""
+          - name: rushed
+            data_type: number
+            description: ""
+          - name: comp_average
+            data_type: number
+            description: ""
+          - name: comp_leisure
+            data_type: number
+            description: ""
+          - name: comp_median
+            data_type: number
+            description: ""
+          - name: comp_polled
+            data_type: integer
+            description: ""
+          - name: comp_rushed
+            data_type: number
+            description: ""
+          - name: extras_av
+            data_type: number
+            description: ""
+          - name: extras_leisure
+            data_type: number
+            description: ""
+          - name: extras_median
+            data_type: number
+            description: ""
+          - name: extras_polled
+            data_type: integer
+            description: ""
+          - name: extras_rushed
+            data_type: number
+            description: ""
+          - name: story_av
+            data_type: number
+            description: ""
+          - name: story_leisure
+            data_type: number
+            description: ""
+          - name: story_median
+            data_type: number
+            description: ""
+          - name: story_polled
+            data_type: integer
+            description: ""
+          - name: story_rushed
             data_type: number
             description: ""
