@@ -1,32 +1,53 @@
 with ventass as (
     select * from {{ref("base_ventas")}}
-), consolass as (
+), cons as (
     select * from {{ref("stg_consolas")}}
-), emp as (
-    select * from {{ref("stg_desarrolladores")}}
-), inf as (
-    select * from {{ref("stg_inflacion")}}
-)
+), prod as (
+    select * from {{ref("stg_productos")}}
+), inter as (
 
 select 
     ventas_id,
-    videojuego,
-    consola_id,
+    {{ dbt_utils.generate_surrogate_key(['v.videojuego']) }} as juego_id,
+    v.videojuego,
+    c.consola_id,
     v.consola,
-    desarrollador_id,
+    ROW_NUMBER() OVER(PARTITION BY v.videojuego,v.consola ORDER BY v.videojuego ASC) as dup,
+    {{ dbt_utils.generate_surrogate_key(['v.empresa']) }} as empresa_id,
     v.empresa,
     v.lanzamiento,
+    p.precio_lanzamiento as precio_dolares,
     ventas_na,
     ventas_eu,
     ventas_jp,
     otras_ventas,
     v.ventas_globales,
-    critica
+    v.critica
 
 from ventass v
-join consolass c
+join cons c
 on v.consola = c.abreviatura
-left join emp e 
-on e.desarrollador = v.empresa
-join inf i 
-on i.anyo = v.lanzamiento
+left join prod p 
+on v.videojuego = p.videojuego
+)
+
+select 
+    ventas_id,
+    juego_id,
+    videojuego,
+    consola_id,
+    consola,
+    empresa_id,
+    empresa,
+    lanzamiento,
+    precio_dolares,
+    ventas_na,
+    ventas_eu,
+    ventas_jp,
+    otras_ventas,
+    ventas_globales,
+    critica
+
+from inter
+where dup = 1
+order by videojuego
