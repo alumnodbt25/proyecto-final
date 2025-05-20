@@ -19,12 +19,12 @@ select
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    v.ventas_globales,
-    v.critica
+    ventas_na + ventas_eu + ventas_jp + otras_ventas as ventas_globales,
+    v.critica,
+    ventas_globales * precio_dolares as ganancias_dolares
 
 from ventass v
 join inf i 
 on i.fecha = v.lanzamiento
-order by videojuego
-
+order by ventas_globales DESC
 

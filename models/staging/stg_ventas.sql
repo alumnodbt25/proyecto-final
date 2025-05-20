@@ -9,7 +9,6 @@ with ventas as (
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    ventas_globales,
     reviews as critica
     
      from {{source('trabajo_final','ventas')}}
@@ -28,7 +27,6 @@ select
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    ventas_globales,
     critica
 
 from ventas

@@ -23,7 +23,6 @@ select
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    v.ventas_globales,
     v.critica
 
 from ventass v
@@ -48,7 +47,6 @@ select
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    ventas_globales,
     critica
 
 from inter
