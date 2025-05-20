@@ -4,8 +4,12 @@ with juegoss as (
 )
 
 select 
-    juego_id,
+   juego_id,
     videojuego,
     genero,
-    empresa
+    empresa,
+    multiplatform,
+    online,
+    average
 from juegoss 
+order by videojuego

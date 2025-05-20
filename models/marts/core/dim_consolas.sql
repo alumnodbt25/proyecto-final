@@ -6,8 +6,9 @@ with cons as (
 select 
     consola_id,
     consola,
-    upper (abreviatura) as abreviatura,
-    lanzamiento::number(38,0) as lanzamiento,
+    abreviatura,
+    nombre_2,
+    lanzamiento,
     empresa,
     precio_na,
     ventas_globales,

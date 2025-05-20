@@ -16,6 +16,9 @@ sources:
           - name: abreviatura
             data_type: varchar
             description: ""
+          - name: nombre_2
+            data_type: varchar
+            description: ""
           - name: lanzamiento
             data_type: varchar
             description: ""

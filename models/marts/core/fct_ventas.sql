@@ -1,13 +1,15 @@
 with ventass as (
     select * from {{ref("stg_ventas")}}
 ), juegos as (
-    select * from {{ref("int_juegos")}}
+    select * from {{ref("dim_juegos")}}
 ), consolass as (
-    select * from {{ref("stg_consolas")}}
+    select * from {{ref("dim_consolas")}}
 ), emp as (
     select * from {{ref("stg_desarrolladores")}}
 ), inf as (
-    select * from {{ref("stg_inflacion")}}
+    select * from {{ref("dim_inflacion")}}
+), prodd as (
+    select * from {{ref("stg_productos")}}
 ), inter as (
 
 select 
@@ -16,30 +18,30 @@ select
     v.videojuego,
     c.consola_id,
     v.consola,
+    ROW_NUMBER() OVER(PARTITION BY v.videojuego,v.consola ORDER BY v.videojuego ASC) as dup,
     e.desarrollador_id,
     v.empresa,
     v.lanzamiento,
-    precio_lanzamiento as precio_dolares,
-    precio_dolares * cambio_dolar_euro as precio_dolares_euros,
-    NULL as precio_euros,
-    precio_euros * cambio_euro_dolar as precio_euros_dolares,
+    p.precio_lanzamiento as precio_dolares,
+    precio_dolares * cambio_dolar_euro as precio_euros,
     ventas_na,
     ventas_eu,
     ventas_jp,
     otras_ventas,
     v.ventas_globales,
-    critica
+    v.critica
 
 from ventass v
-join juegos j
-on v.videojuego = j.videojuego
-join consolass c
+ join juegos j
+on v.videojuego = j.videojuego 
+left join consolass c
 on v.consola = c.abreviatura
-left join emp e 
+ join emp e 
 on e.desarrollador = v.empresa
-join inf i 
-on i.anyo = v.lanzamiento
-order by precio_dolares
+ join inf i 
+on i.fecha = v.lanzamiento
+left join prodd p
+on v.videojuego = p.videojuego
 )
 
 select 
@@ -51,14 +53,8 @@ select
     desarrollador_id,
     empresa,
     lanzamiento,
-    case 
-        when precio_dolares IS NULL THEN precio_euros_dolares
-        else precio_dolares
-        end as precio_dolares,
-    case 
-        when precio_euros IS NULL then precio_dolares_euros
-        else precio_euros 
-        end as precio_euros,
+    precio_dolares,
+    precio_euros,
     ventas_na,
     ventas_eu,
     ventas_jp,
@@ -66,4 +62,5 @@ select
     ventas_globales,
     critica
 from inter
-order by precio_dolares
+where dup = 1
+order by videojuego
