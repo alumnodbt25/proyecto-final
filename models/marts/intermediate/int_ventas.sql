@@ -11,6 +11,7 @@ select
     juego_id,
     v.videojuego,
     c.consola_id,
+    c.nombre_2,
     v.consola,
     ROW_NUMBER() OVER(PARTITION BY v.videojuego,v.consola ORDER BY v.videojuego ASC) as dup,
     empresa_id,
@@ -29,7 +30,7 @@ from ventass v
 join cons c
 on v.consola = c.abreviatura
 left join prod p 
-on v.videojuego = p.videojuego
+on v.videojuego = p.videojuego and p.consola = c.nombre_2
 )
 
 select 

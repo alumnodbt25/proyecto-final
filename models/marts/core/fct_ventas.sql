@@ -2,7 +2,7 @@ with ventass as (
     select * from {{ref("int_ventas")}}
 ), inf as (
     select * from {{ref("dim_inflacion")}}
-)
+) 
 
 select 
     ventas_id,
