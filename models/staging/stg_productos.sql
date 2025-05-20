@@ -15,7 +15,7 @@ select
     review_score as critica,
     sales, 
     used_price as precio_lanzamiento,
-    console as consola,
+    lower(console) as consola,
     rating, 
     re_release,
     release_year,
@@ -40,3 +40,4 @@ select
     story_polled,
     story_rushed
 from prod 
+order by videojuego
