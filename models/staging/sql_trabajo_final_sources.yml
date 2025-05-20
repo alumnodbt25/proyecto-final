@@ -31,6 +31,8 @@ sources:
           - name: ventas_globales
             data_type: number
             description: "Ventas globales de la consola"
+            tests:
+              - positive_values
 
       - name: desarrollador_indie
         description: 'Desarrolladores de videojuegos indies'
