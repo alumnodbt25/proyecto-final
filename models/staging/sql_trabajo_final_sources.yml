@@ -12,264 +12,264 @@ sources:
         columns:
           - name: consola
             data_type: varchar
-            description: ""
+            description: "Nombre de la consola"
           - name: abreviatura
             data_type: varchar
-            description: ""
+            description: "Abreviatura de la consola"
           - name: nombre_2
             data_type: varchar
-            description: ""
+            description: "Nombre alternativo"
           - name: lanzamiento
             data_type: varchar
-            description: ""
+            description: "Fecha de lanzamiento de la consola"
           - name: empresa
             data_type: varchar
-            description: ""
+            description: "Empresa fabricante"
           - name: precio_na
             data_type: number
-            description: ""
+            description: "Precio de salida en dólares"
           - name: ventas_globales
             data_type: number
-            description: ""
+            description: "Ventas globales de la consola"
 
       - name: desarrollador_indie
         description: 'Desarrolladores de videojuegos indies'
         columns:
           - name: desarrollador
             data_type: varchar
-            description: ""
+            description: "Nombre de la empresa desarrolladora"
           - name: ciudad
             data_type: varchar
-            description: ""
+            description: "Ciudad en la que está establecida"
           - name: autonomous_area
             data_type: varchar
-            description: ""
+            description: "Área autonómica donde está establecida"
           - name: pais
             data_type: varchar
-            description: ""
+            description: "País donde está establecida"
           - name: juegos_notables
             data_type: varchar
-            description: ""
+            description: "Juegos notables creados por la empresa"
           - name: notas
             data_type: varchar
-            description: ""
+            description: "Notas sobre el desarrollador"
 
       - name: desarrolladores
         description: 'Empresas desarrolladoras de videojuegos'
         columns:
           - name: desarrollador
             data_type: varchar
-            description: ""
+            description: "Nombre de la empresa desarrolladora"
           - name: ciudad
             data_type: varchar
-            description: ""
+            description: "Ciudad en la que está establecida"
           - name: division_administrativa
             data_type: varchar
-            description: ""
+            description: "División administrativa en la que está establecida"
           - name: pais
             data_type: varchar
-            description: ""
+            description: "País en el que está establecido"
           - name: year_published
             data_type: varchar
-            description: ""
+            description: "Fecha de fundación de la empresa"
           - name: juegos_notables
             data_type: varchar
-            description: ""
+            description: "Juegos notables creados por la empresa"
           - name: notas
             data_type: varchar
-            description: ""
+            description: "Notas sobre el desarrollador"
 
       - name: inflacion
         description: 'Inflación mundial por año'
         columns:
           - name: anyo
             data_type: number
-            description: ""
+            description: "Año"
           - name: infacion_global
             data_type: number
-            description: ""
+            description: "Inflación en porcentaje"
           - name: cambio_euro_dolar
             data_type: number
-            description: ""
+            description: "Cambio de divisa de euro a dólar"
           - name: cambio_dolar_euro
             data_type: number
-            description: ""
+            description: "Cambio de divisa de dólar a euro"
 
       - name: paises
         description: 'Listado de países'
         columns:
           - name: pais
             data_type: varchar
-            description: ""
+            description: "Nombre del país en español"
           - name: country
             data_type: varchar
-            description: ""
+            description: "Nombre del país en inglés"
           - name: pays
             data_type: varchar
-            description: ""
+            description: "Nombre del país en francés"
           - name: abreviatura_1
             data_type: varchar
-            description: ""
+            description: "Abreviatura del país en 2 letras"
           - name: abreviatura_2
             data_type: varchar
-            description: ""
+            description: "Abreviatura del país en 3 letras"
           - name: codigo_telf
             data_type: varchar
-            description: ""
+            description: "Código telefónico del país"
           - name: continente
             data_type: varchar
-            description: ""
+            description: "Continente"
 
       - name: ventas
         description: 'Ventas de videojuegos'
         columns:
           - name: indice
             data_type: number
-            description: ""
+            description: "Columna índice"
           - name: rango
             data_type: number
-            description: ""
+            description: "Columna rango"
           - name: nombre
             data_type: varchar
-            description: ""
+            description: "Nombre del videojuego"
           - name: plataforma
             data_type: varchar
-            description: ""
+            description: "Plataforma/consola"
           - name: year_published
             data_type: number
-            description: ""
+            description: "Año de lanzamiento"
           - name: genero
             data_type: varchar
-            description: ""
+            description: "Género del videojuego"
           - name: publisher
             data_type: varchar
-            description: ""
+            description: "Empresa desarrolladora"
           - name: ventas_na
             data_type: number
-            description: ""
+            description: "Ventas en Norte América"
           - name: ventas_eu
             data_type: number
-            description: ""
+            description: "Ventas en la Unión Europea"
           - name: ventas_jp
             data_type: number
-            description: ""
+            description: "Ventas en Japón"
           - name: otras_ventas
             data_type: number
-            description: ""
+            description: "Ventas en otros países"
           - name: ventas_globales
             data_type: number
-            description: ""
+            description: "Ventas globales"
           - name: reviews
             data_type: number
-            description: ""
+            description: "Crítica del videojuego"
       - name: producto
         description: 'Información de videojuegos'
         columns:
           - name: titulo
             data_type: varchar
-            description: ""
+            description: "Nombre del videojuego"
           - name: features_handheld
             data_type: boolean
-            description: ""
+            description: "Portabilidad"
           - name: max_players
             data_type: number
-            description: ""
+            description: "Número de jugadores máximos que admite el videojuego"
           - name: multiplatform
             data_type: boolean
-            description: ""
+            description: "Disponibilidad en varias plataformas"
           - name: online
             data_type: boolean
-            description: ""
+            description: "Juego online"
           - name: genre
             data_type: varchar
-            description: ""
+            description: "Género al que pertenece el videojuego"
           - name: licensed
             data_type: boolean
-            description: ""
+            description: "Basado en una entidad con licencia"
           - name: publishers
             data_type: varchar
-            description: ""
+            description: "Empresas desarrolladoras"
           - name: sequel
             data_type: boolean
-            description: ""
+            description: "Secuela de otro videojuego"
           - name: review_score
             data_type: number
-            description: ""
+            description: "Crítica del videojuego"
           - name: sales
             data_type: number
-            description: ""
+            description: "Ventas por millones de dólares"
           - name: used_price
             data_type: number
-            description: ""
+            description: "Precio de lanzamiento"
           - name: console
             data_type: varchar
-            description: ""
+            description: "Consola que soporta el juego"
           - name: rating
             data_type: varchar
-            description: ""
+            description: "Clasificación recomendada por edades: E: everyone, T: teen, M: mature"
           - name: re-release
             data_type: boolean
-            description: ""
+            description: "El juego es un relanzamiento"
           - name: release_year
             data_type: number
-            description: ""
+            description: "Año de lanzamiento"
           - name: average
             data_type: number
-            description: ""
+            description: "Tiempo medio para completar el juego"
           - name: leisure
             data_type: number
-            description: ""
+            description: "El tiempo más lento para completar el juego"
           - name: play_median
             data_type: number
-            description: ""
+            description: "La mediana del tiempo para completar el videojuego"
           - name: polled
             data_type: integer
-            description: ""
+            description: "Número de jugadores que han completado el juego"
           - name: rushed
             data_type: number
-            description: ""
+            description: "Menor tiempo para completar el juego"
           - name: comp_average
             data_type: number
-            description: ""
+            description: "Tiempo medio para completar el juego al 100%"
           - name: comp_leisure
             data_type: number
-            description: ""
+            description: "Tiempo más lento para completar el 100% del juego"
           - name: comp_median
             data_type: number
-            description: ""
+            description: "La mediana del tiempo para completar el juego al 100%"
           - name: comp_polled
             data_type: integer
-            description: ""
+            description: "Número de jugadores que han completado el juego al 100%"
           - name: comp_rushed
             data_type: number
-            description: ""
+            description: "Tiempo más rápido para completar el juego al 100%"
           - name: extras_av
             data_type: number
-            description: ""
+            description: "Tiempo medio para completar el juego y la mayoría de sus extras"
           - name: extras_leisure
             data_type: number
-            description: ""
+            description: "Tiempo más lento para completar el juego y la mayoría de sus extras"
           - name: extras_median
             data_type: number
-            description: ""
+            description: "La mediana del tiempo para completar el juego y la mayoría de sus extras"
           - name: extras_polled
             data_type: integer
-            description: ""
+            description: "Numero de jugadores que han completado el juego y la mayoría de sus extras"
           - name: extras_rushed
             data_type: number
-            description: ""
+            description: "El menor tiempo para completar el juego y la mayoría de sus extras"
           - name: story_av
             data_type: number
-            description: ""
+            description: "Tiempo medio para completar la historia del juego"
           - name: story_leisure
             data_type: number
-            description: ""
+            description: "Tiempo más lento para completar la historia del juego"
           - name: story_median
             data_type: number
-            description: ""
+            description: "Mediana del tiempo para completar la historia del juego"
           - name: story_polled
             data_type: integer
-            description: ""
+            description: "Número de jugadores que han completado la historia del juego"
           - name: story_rushed
             data_type: number
-            description: ""
+            description: "Menor tiempo para completar la historia del juego"
