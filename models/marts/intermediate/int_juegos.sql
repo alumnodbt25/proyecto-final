@@ -4,7 +4,7 @@ with juegos as (
         genero,
         empresa
     
-     from {{ref("base_ventas")}}
+     from {{ref("stg_ventas")}}
 ), product as (
     select * from {{ref("stg_productos")}}
 ), interr as (

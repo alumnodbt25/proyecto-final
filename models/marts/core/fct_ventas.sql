@@ -1,5 +1,5 @@
 with ventass as (
-    select * from {{ref("stg_ventas")}}
+    select * from {{ref("int_ventas")}}
 ), inf as (
     select * from {{ref("dim_inflacion")}}
 )
