@@ -10,7 +10,7 @@ select
     online,
     lower(genre) as genero,
     licensed,
-    lower(publishers) as empresa,
+    lower(publishers) as publishers,
     sequel,
     review_score as critica,
     sales, 
