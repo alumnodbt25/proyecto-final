@@ -23,7 +23,8 @@ select
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    v.critica
+    v.critica,
+    v.fecha_carga
 
 from ventass v
 join cons c
@@ -47,7 +48,8 @@ select
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    critica
+    critica,
+    fecha_carga
 
 from inter
 where dup = 1

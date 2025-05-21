@@ -21,7 +21,8 @@ select
     otras_ventas,
     ventas_na + ventas_eu + ventas_jp + otras_ventas as ventas_globales,
     v.critica,
-    ventas_globales * precio_dolares as ganancias_dolares
+    ventas_globales * precio_dolares as ganancias_dolares,
+    fecha_carga
 
 from ventass v
 join inf i 

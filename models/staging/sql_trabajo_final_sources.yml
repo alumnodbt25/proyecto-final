@@ -164,6 +164,10 @@ sources:
           - name: reviews
             data_type: number
             description: "Crítica del videojuego"
+          - name: fecha_carga
+            data_type: varchar
+            description: 'Fecha de ingesta de los datos'
+
       - name: producto
         description: 'Información de videojuegos'
         columns:
