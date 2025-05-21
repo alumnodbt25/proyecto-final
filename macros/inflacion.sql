@@ -9,11 +9,10 @@
             f.{{ columna_anio }},
             p.{{columna_fecha}},
             f.{{ columna_factor_multiplicacion }},
-            p.{{ columna_precio_original }} + p.{{ columna_precio_original }} * (f.{{ columna_factor_multiplicacion }}/100) AS precio_calculado,
-            1 AS row_num
+            p.{{ columna_precio_original }} + p.{{ columna_precio_original }} * (f.{{ columna_factor_multiplicacion }}/100) AS precio_calculado
         FROM {{ ref(tabla_productos) }} p
         JOIN {{ ref(tabla_factores) }} f
-            ON f.{{ columna_anio}} = p.{{columna_fecha}} + 1
+            ON f.{{ columna_anio}} = p.{{columna_fecha}} + 1 -- Empezamos el año posterior a la salida 
 
         UNION ALL
 
@@ -25,13 +24,11 @@
             m.{{columna_fecha}},
             f.{{ columna_factor_multiplicacion }},
             m.precio_calculado + m.precio_calculado * (f.{{ columna_factor_multiplicacion }}/100) AS precio_calculado,
-            m.row_num + 1 AS row_num  -- Aumentamos el contador de filas
         FROM multiplicaciones m
         JOIN {{ ref(tabla_factores) }} f
             ON f.{{ columna_anio }} = m.{{ columna_anio }} + 1  -- Avanzamos al siguiente año
     )
 
-    -- Seleccionamos solo el último año de cada producto usando ROW_NUMBER
     SELECT
         {{ columna_producto_id }},
         {{ columna_precio_original }},

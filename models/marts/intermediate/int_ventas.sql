@@ -1,3 +1,9 @@
+{{ config(
+    materialized='incremental',
+    unique_key = 'videojuego'
+    ) 
+    }}
+    
 with ventass as (
     select * from {{ref("stg_ventas")}}
 ), cons as (
@@ -54,3 +60,9 @@ select
 from inter
 where dup = 1
 order by videojuego
+
+{% if is_incremental() %}
+
+  where fecha_carga >= (select max(fecha_carga) from {{ this }})
+
+{% endif %}

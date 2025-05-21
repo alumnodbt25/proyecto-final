@@ -1,3 +1,9 @@
+{{ config(
+    materialized='incremental',
+    unique_key = 'videojuego'
+    ) 
+    }}
+
 with ventass as (
     select * from {{ref("int_ventas")}}
 ), inf as (
@@ -29,3 +35,8 @@ join inf i
 on i.fecha = v.lanzamiento
 order by ventas_globales DESC
 
+{% if is_incremental() %}
+
+  where fecha_carga >= (select max(fecha_carga) from {{ this }})
+
+{% endif %}
