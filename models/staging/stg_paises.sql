@@ -13,7 +13,9 @@ with paises as (
 
 select 
     pais,
-    country,
+    case when country = 'united states of america' then 'united states'
+    else country
+    end as country,
     pays,
     abreviatura_1,
     abreviatura_2,

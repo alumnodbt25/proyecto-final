@@ -37,7 +37,8 @@
         {{ columna_precio_original }},
         {{columna_fecha}},
         fecha,
-        precio_calculado
+        precio_calculado,
+        round(precio_calculado/{{columna_precio_original}}*100, 2) || '%' as porcentaje_incremento
     FROM (
         SELECT
             {{ columna_producto_id }},

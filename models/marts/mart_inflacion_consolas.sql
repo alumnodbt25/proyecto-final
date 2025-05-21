@@ -9,3 +9,4 @@
     'lanzamiento',                     
     'inflacion_global'                     
 ) }}
+
