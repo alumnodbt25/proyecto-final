@@ -78,4 +78,5 @@ select
 from cte_1 a 
 left join cte_2 b 
 on a.pais = b.pais
+order by ventas_totales
 

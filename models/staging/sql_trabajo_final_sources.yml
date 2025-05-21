@@ -13,6 +13,8 @@ sources:
           - name: consola
             data_type: varchar
             description: "Nombre de la consola"
+            data_tests:
+              - unique
           - name: abreviatura
             data_type: varchar
             description: "Abreviatura de la consola"
@@ -22,6 +24,8 @@ sources:
           - name: lanzamiento
             data_type: varchar
             description: "Fecha de lanzamiento de la consola"
+            data_tests:
+              - positive_values
           - name: empresa
             data_type: varchar
             description: "Empresa fabricante"
