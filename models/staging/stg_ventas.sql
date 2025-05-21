@@ -1,3 +1,9 @@
+{{ config(
+    materialized='incremental',
+    unique_key = 'videojuego'
+    ) 
+    }}
+
 with ventas as (
     select 
     lower(nombre) as videojuego,
@@ -9,7 +15,8 @@ with ventas as (
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    reviews as critica
+    reviews as critica,
+    fecha_carga
     
      from {{source('trabajo_final','ventas')}}
 )
@@ -27,6 +34,13 @@ select
     ventas_eu,
     ventas_jp,
     otras_ventas,
-    critica
+    critica,
+    fecha_carga
 
 from ventas
+
+{% if is_incremental() %}
+
+  where fecha_carga >= (select max(fecha_carga) from {{ this }})
+
+{% endif %}
