@@ -19,7 +19,7 @@ select
     c.consola_id,
     c.nombre_2,
     v.consola,
-    ROW_NUMBER() OVER(PARTITION BY v.videojuego,v.consola ORDER BY v.videojuego ASC) as dup,
+    ROW_NUMBER() OVER(PARTITION BY v.videojuego,v.consola ORDER BY v.videojuego ASC) as dupi,
     empresa_id,
     v.empresa,
     v.lanzamiento,
@@ -58,11 +58,5 @@ select
     fecha_carga
 
 from inter
-where dup = 1
+where dupi = 1
 order by videojuego
-
-{% if is_incremental() %}
-
-  where fecha_carga >= (select max(fecha_carga) from {{ this }})
-
-{% endif %}
