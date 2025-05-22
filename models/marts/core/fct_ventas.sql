@@ -11,32 +11,28 @@ with ventass as (
 ) 
 
 select 
-    ventas_id,
-    juego_id,
+    v.ventas_id,
+    v.juego_id,
     v.videojuego,
-    consola_id,
+    v.consola_id,
     v.consola,
-    empresa_id,
+    v.empresa_id,
     v.empresa,
     v.lanzamiento,
-    precio_dolares,
-    precio_dolares * cambio_dolar_euro as precio_euros,
-    ventas_na,
-    ventas_eu,
-    ventas_jp,
-    otras_ventas,
-    ventas_na + ventas_eu + ventas_jp + otras_ventas as ventas_globales,
+    v.precio_dolares,
+    v.precio_dolares * i.cambio_dolar_euro as precio_euros,
+    v.ventas_na,
+    v.ventas_eu,
+    v.ventas_jp,
+    v.otras_ventas,
+    v.ventas_na + v.ventas_eu + v.ventas_jp + v.otras_ventas as ventas_globales,
     v.critica,
     ventas_globales * precio_dolares as ganancias_dolares,
-    fecha_carga
+    v.fecha_carga
 
 from ventass v
 join inf i 
 on i.fecha = v.lanzamiento
 order by ventas_globales DESC
 
-{% if is_incremental() %}
 
-  where fecha_carga >= (select max(fecha_carga) from {{ this }})
-
-{% endif %}
