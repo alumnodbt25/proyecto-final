@@ -3,11 +3,11 @@ with prod as (
 )
 
 select 
-    lower(titulo) as videojuego,
-    features_handheld,
-    max_players as jugadores_max,
-    multiplatform, 
-    online,
+    cast(lower(titulo) as varchar(256)) as videojuego,
+    cast(features_handheld as boolean) as features_handheld,
+    cast(max_players as integer) as jugadores_max,
+    cast(multiplatform as boolean) as multiplatform, 
+    cast(online as boolean) as online,
     lower(genre) as genero,
     licensed,
     lower(publishers) as publishers,

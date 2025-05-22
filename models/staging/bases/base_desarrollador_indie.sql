@@ -15,7 +15,7 @@ select
     ciudad,
     division_administrativa,
     pais,
-    'Desconocido' as fundacion,
+    NULL as fundacion,
     juegos_notables,
     notas
     from des_indie
