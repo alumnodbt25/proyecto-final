@@ -45,6 +45,9 @@ sources:
           - name: desarrollador
             data_type: varchar
             description: "Nombre de la empresa desarrolladora"
+            data_tests:
+              - unique
+              - not-null
           - name: ciudad
             data_type: varchar
             description: "Ciudad en la que está establecida"
@@ -67,6 +70,9 @@ sources:
           - name: desarrollador
             data_type: varchar
             description: "Nombre de la empresa desarrolladora"
+            data_tests:
+              - not_null
+              - unique
           - name: ciudad
             data_type: varchar
             description: "Ciudad en la que está establecida"
@@ -92,9 +98,13 @@ sources:
           - name: anyo
             data_type: number
             description: "Año"
+            data_tests:
+              - not_null
           - name: infacion_global
             data_type: number
             description: "Inflación en porcentaje"
+            data_tests:
+              - not_null
           - name: cambio_euro_dolar
             data_type: number
             description: "Cambio de divisa de euro a dólar"
