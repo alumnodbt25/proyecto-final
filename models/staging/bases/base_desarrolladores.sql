@@ -1,12 +1,12 @@
 with desarrollador as (
     select 
-    lower(desarrollador) as desarrollador,
-    lower(ciudad) as ciudad,
-    lower(division_administrativa) as division_administrativa,
-    lower(pais) as pais,
-    year_published as fundacion,
-    juegos_notables,
-    notas
+    cast(lower(desarrollador) as varchar(256)) as desarrollador,
+    cast(lower(ciudad) as varchar(256)) as ciudad,
+    cast(lower(division_administrativa) as varchar(256)) as division_administrativa,
+    cast(lower(pais) as varchar(256)) as pais,
+    cast(year_published as integer) as fundacion,
+    cast(juegos_notables as varchar(600)) as juegos_notables,
+    cast(notas as varchar(256)) as notas
     
      from {{source('trabajo_final','desarrolladores')}}
 )
