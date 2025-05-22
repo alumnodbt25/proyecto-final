@@ -1,11 +1,11 @@
 with des_indie as (
     select 
-    lower(desarrollador) as desarrollador,
-    lower(ciudad) as ciudad,
-    lower(autonomous_area) as division_administrativa,
-    lower(pais) as pais,
-    juegos_notables,
-    notas
+    cast(lower(desarrollador) as varchar(256)) as desarrollador,
+    cast(lower(ciudad) as varchar(256)) as ciudad,
+    cast(lower(autonomous_area) as varchar(256)) as division_administrativa,
+    cast(lower(pais) as varchar(256)) as pais,
+    cast(juegos_notables as varchar(450)) as juegos_notables,
+    cast(notas as varchar(300)) as notas
      from {{source('trabajo_final','desarrollador_indie')}}
 )
 
